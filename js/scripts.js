@@ -1,14 +1,14 @@
 const container = document.querySelector(".container");
-const qrCodeBtn = document.querySelector(".form button");
+const qrCodeBtn = document.querySelector("#qr-form button");
 
-const qrCodeInput = container.querySelector(".form input");
-const qrCodeImg = container.querySelector(".qr-code img");
+const qrCodeInput = container.querySelector("#qr-form input");
+const qrCodeImg = container.querySelector("#qr-code img");
 
 // Gerar código
 qrCodeBtn.addEventListener("click", () => {
-  let qrCodeInputValue = qrInput.value;
+  let qrCodeInputValue = qrCodeInput.value;
 
-  if (!qrValue) return;
+  if (!qrCodeInputValue) return;
 
   qrCodeBtn.innerText = "Gerando código...";
 

@@ -5,7 +5,7 @@ const qrCodeInput = container.querySelector("#qr-form input");
 const qrCodeImg = container.querySelector("#qr-code img");
 
 // Gerar código
-qrCodeBtn.addEventListener("click", () => {
+function generateQrCode() {
   let qrCodeInputValue = qrCodeInput.value;
 
   if (!qrCodeInputValue) return;
@@ -18,6 +18,16 @@ qrCodeBtn.addEventListener("click", () => {
     container.classList.add("active");
     qrCodeBtn.innerText = "Código criado!";
   });
+}
+
+qrCodeBtn.addEventListener("click", () => {
+  generateQrCode();
+});
+
+qrCodeInput.addEventListener("keydown", (e) => {
+  if (e.code === "Enter") {
+    generateQrCode();
+  }
 });
 
 // Limpar área do código
